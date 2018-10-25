@@ -166,11 +166,7 @@ var parse = exports.parse = function(str, options) {
           var path = resolveInclude(name, filename);
         include = read(path, 'utf8');
         include = exports.parse(include, options); // Added transfer whole options
-        buf += 'buf.push("';
-		buf += "' + (function(){";
-		buf += '" + include + "})() + ';
-		buf += "'";
-		buf += '");';
+        buf += "' + (function(){" + include + "})() + '";
         js = '';
       }
 
